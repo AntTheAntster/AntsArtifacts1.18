@@ -1,0 +1,11 @@
+main: uk.co.anttheantster.antsartifacts.AntsArtifacts
+name: AntsArtifacts
+version: 0.1
+api-version: 1.18
+commands:
+  as:
+    description: Artifacts Shop
+    aliases: [artifactsshop]
+  aa:
+    description: Admin Commands
+    aliases: [antsartifacts]
