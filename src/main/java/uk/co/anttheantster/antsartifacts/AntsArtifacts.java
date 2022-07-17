@@ -6,6 +6,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import uk.co.anttheantster.antsartifacts.commands.ArtifactsShop;
+import uk.co.anttheantster.antsartifacts.commands.Test;
 import uk.co.anttheantster.antsartifacts.listeners.onJoin;
 import uk.co.anttheantster.antsartifacts.sql.MySQL;
 import uk.co.anttheantster.antsartifacts.sql.SQLGetter;
@@ -33,17 +34,19 @@ public class AntsArtifacts extends JavaPlugin {
 
         saveDefaultConfig();
 
-        setupSQL();
+        //setupSQL();
 
         registerCommandsAndListeners();
     }
 
     public void registerCommandsAndListeners(){
         getCommand("as").setExecutor(new ArtifactsShop(this));
-        
+        getCommand("test").setExecutor(new Test());
+
         pm.registerEvents(new onJoin(this), this);
     }
 
+    /*
     //Initialize new SQL Connection and try to connect to it
     private void setupSQL() {
         this.SQL = new MySQL(this);
@@ -63,4 +66,5 @@ public class AntsArtifacts extends JavaPlugin {
             Bukkit.getPluginManager().disablePlugin(this);
         }
     }
+     */
 }
